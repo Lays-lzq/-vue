@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/agreement.css">
+  <script src="../js/vue (1).js"></script>
+  <script src="../js/agreement.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="nav">
+      <div class="buttom-nav">
+        <ul class="left-nav">
+          <li><a href="">小米商城</a></li>
+          <li><a href="">协议规则</a></li>
+          <li><a href="./certificate.html">资质证照</a></li>
+          <li><a href="./download.html">下载app</a></li>
+        </ul>
+        <ul class="right-nav">
+          <li><a href="">购物车</a></li>
+          <li><a href="">消息通知</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="head">
+      <div class="container">
+        <div class="header-logo">
+          <a href="index.html">
+            <div class="logo-left"></div>
+            <div class="logo-right"></div>
+          </a> 
+        </div>
+      </div>
+      <div class="head-nav">
+          <ul>
+            <li v-for="i in headNav"><a href="">{{i.name}}</a></li>
+          </ul>
+      </div>
+      <div class="head-search">
+        <input type="text" placeholder="电视" />
+        <div class="search-button"></div>
+      </div>
+      <div class="head-select">
+        <div class="head-item">
+          <ul>
+            <li v-for="item in mobile1">
+              <img src="../img/mobile.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in mobile2">
+              <img src="../img/mobile2.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in TV">
+              <img src="../img/TV.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in PC">
+              <img src="../img/PC.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in furniture">
+              <img src="../img/funiture.png" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in router">
+              <img src="../img/router.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="head-item">
+          <ul>
+            <li v-for="item in intelligent">
+              <img src="../img/it.webp" height="120px" alt="">
+              <div class="head-item-name">{{item.name}}</div>
+              <div class="head-item-price">{{item.price}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="s-index">
+        <span>首页  /  {{Idata}}</span>
+      </div>
+      <div class="left-banner">
+        <ul>
+          <li v-for="(i,index) in Lbanner" @click="Lbclick(index)" :class="{active:activeindex==index}">{{i}}</li>
+        </ul>
+      </div>
+      <div class="right-banner">
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>入驻指南</h2>
+            <hr>
+            <p><p>一、入驻须知</p>
+            1.商家需按照小米商城的要求如实提供相关信息。商家递交资料过程中，存在任何非诚信行为，如资料作假等都将对入驻产生影响，小米商城有权要求商家重新提供真实资料并提高其保证金金额。</p>
+            <p>2.商家负责维护产品信息页面的信息，并保证其所发布的信息符合国家法律、法规、规章及小米商城相关规定的要求。</p>
+            <p>二、资料的提交及核准<p>1.商家收到小米商城通知后，正式进入资质提交阶段。</p>
+            <p>2.商家资质提交分为：首次入驻提交，及资质更新或新增两种形式。对于首次入驻，商家需提交法律法规和相关规定要求的一般性经营资质及许可经营资质以供小米商城进行核准。商家一般性经营资质和许可经营资质变更或更新的，应在变更或更新后10日内将变更或更新后的证照扫描件、证照信息提供给小米商城。</p>
+            </p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>商家违规行为及处理规则</h2>
+            <hr>
+            <p><p>一、概述</p>
+            1、 为了规范商家行为，营造良好的购物环境，持续提升消费者购物体验，根据国家法律法规规范，以及小米商城相关协议和规则，制定本规则。</p>
+            <p>2、 本规则适用于小米商城上的第三方商家（以下称“商家”）。</p>
+            <p>二、严重违规行为<p>本规则规定的违规行为包括但不限于以下情形：</p>
+            <p>1、出售假冒商品</p><p>是指商家出售假冒商品的行为。</p><p>2、发布违禁信息</p>
+            <p>是指商家发布涉黄涉暴等违规违禁信息或其他有违公序良俗的信息。</p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>食品安全管理制度</h2>
+            <hr>
+            <p>第一章 总则</p>
+            <p>1.1 本制度适用于以小米商城为载体开展的网络食品服务，具体指在小米商城食品经营的商家通过小米商城接受用户订单并派送食品的经营活动。</p>
+            <p>1.2 小米商城负责平台食品相关资质标准的制定、更新，并对商家资质进行线下线上审核。<p>第二章 入网食品经营者审查登记</p>
+            <p>2.1线下资质审查</p><p>入网前商家需提供有效证照资质原件（包括营业执照及食品经营许可证等资质原件），资质审核人员结合商家食品经营的实际情况核对其经营范围、许可证有效期、经营地址等内容的真实性；</p><p>2.2线上资质审查</p>
+            <p>通过线下审查的商家必须按照小米商城的要求在平台上传其资质，资质审核人员根据线下审核的情况，再次审核原件与上传资质的一致性与规范性，以确保在商家经营页面完整展示食品经营资质。质量管理部门依据审核后的商家资质上线对应食品。</p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>第三方商家产品售后规则</h2>
+            <hr>
+            <p>二、退换货规则</p>
+            <p>1. 商品的退换货规则请以第三方商家的售后服务政策为准。 2．不适用七天无理由退货情形 （1）个人定作类商品； （2）鲜活易腐类商品； （3）在线下载或者您已拆封的音像制品，计算机软件等数字化商品； （4）交付的报纸期刊类商品； （5）根据商品性质不适宜退货，并经顾客购买时确认的商品： a.拆封后易影响人身安全或者生命健康的商品，或者拆封后易导致商品品质发生改变的商品； b.一经激活或者试用后价值贬损较大的商品； c.销售时已明示的临近保质期的商品、有瑕疵的商品； d.其他根据商品性质不适宜退货的商品。 （6）无法保证退回商品完好（能够保持原有品质、功能，商品本身配件、商标标识齐全的，视为商品完好）； （7）平台内相关页面公示明确不适用七天无理由退货的商品； （8）出现依据法律法规或第三方商家售后服务政策规定的不支持退货情形的商品。 3．不予办理退换货情形 （1）任何非小米商城的第三方商家出售的商品； （2）超过退换货期限的商品； （3）商品外观、功能不符合退换货标准； （4）未经授权的维修、误用、碰撞、疏忽、滥用、进液、事故、改动、不正确的安装所造成的商品质量问题，或撕毁、涂改标贴、机器序号、防伪标记； （5）商品的外包装、附件、赠品、说明书不完整； （6）因意外因素或人为原因（包括浸水、震裂、摔坏、印刷线路板及功能器件烧坏等）导致商品故障或损坏； （7）发票缺失或涂改三包凭证信息； （8）其他依法不予办理退换货的。</p>
+            <p>三、第三方商家自主售后 第三方商家商品将由第三方商家直接为您提供售后服务，请您直接联系商家解决；如对商家处理结果有异议，您可以拨打小米客服热线进行反馈，小米将协助为您解决。</p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>用户账户安全</h2>
+            <hr>
+            <p>一、账户注册</p>
+            <p>打开小米商城官网，点击右上角“注册”按钮 > 2. 同意小米商城相关协议 > 3.输入手机号和图片上的验证码 > 4.输入短信验证码，点击“下一步”按钮 > 5.按提示输入您的信息</p>
+            <p>二、密码设置、修改 如果您要设置、修改您的密码，请前往https://account.xiaomi.com 进行相关操作。</p>
+            <p>三、密码找回<p>忘记密码网页端如何操作？（1）绑定手机号可以使用第1步：进入官网登录界面 第2步：点击“忘记密码” 第3步：输入注册的邮箱、手机号或小米帐号 第4步：点击“发送短信” 第5步：输入短信验证码  第6步：重设密码 （2）绑定手机号不可使用，系统关联手机号可以使用 第1步：进进入官网登录界面 第2步：点击“忘记密码” 第3步：输入注册的邮箱、手机号或小米帐号 第4步：点击“发送短信” 第5步：输入短信验证码 第6步：重设密码 （2）绑定手机号不可使用，系统关联手机号可以使用 第1步：进入官网登录界面 第2步：点击“忘记密码” 第3步：输入注册的邮箱、手机号或小米帐号 第4步：换用其他验证方式 第5步：确认系统判定的手机号可使用，点击下一步 第6步：点击“发送短信” 第7步：输入短信验证码 第8步：重设密码</p>
+            <p>如果您手机被他人小米帐号锁定，请点击申诉解锁</p>
+            </p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>小米商城平台主体</h2>
+            <hr>
+            <p><b>小米科技有限责任公司证照公示如下：</b></p>
+            <p>小米科技有限责任公司营业执照</p>
+            <p>网络文化经营许可证<p>医疗器械网络交易服务第三方平台备案凭证</p>
+            <p>增值电信业务经营许可证</p><p>互联网药品信息服务资格证书</p><p>食品经营许可证</p>
+            <p>电信与信息服务业务经营许可证</p><p>网络食品经营备案</p>
+            <button>下载</button>
+          </div>
+        </div>
+        <div class="banner-item">
+          <div class="item-list">
+            <h2>异常订单处理规则</h2>
+            <hr>
+            <p><b>各位小米商城用户：</b></p>
+            <p>为充分保证用户的合法权益，根据国家法律规定及小米商城运营需要，小米商城起草了《异常订单处理规则》，该规则于2020年 12月26日公示，并于2020年01月03生效。</p>
+            <p>如您对该规则有任何意见，请您将您的意见发送至以下邮箱： mishop-ag-fb@xiaomi.com。</p>
+            <p>异常订单处理规则</p>
+            <p>为了维护用户合法权益，限制利用违规手段刷单、骗取优惠券或恶意维权等行为，保证小米商城用户正常用户体验，特制定本规则。</p>
+            <p>用户知悉并同意，若用户出现本规则规定的违规情形，小米商城有权依照本规则的规定，对用户的账户及购买行为采取一项或多项限制措施，且小米商城无须就上述行为给用户造成的损失承担任何赔偿责任。因用户的违规行为给小米商城造成损失的，小米商城有权依照法律规定要求用户赔偿。</p>
+            <p>《小米商城用户协议》及小米商城上已经公示的其他规则与本规则规定不一致的，以本规则规定为准，本规则未规定的内容仍以《小米商城用户协议》及小米商城上已经公司的其他规则为准。</p>
+            <button>下载</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+        const app = new Vue({
+      el: '#app',
+      data: {
+        headNav: [
+          {
+            name: '小米手机',
+            type: 'mobile1'
+          },
+          {
+            name: 'Redmi红米',
+            type: 'mobile2'
+          },
+          {
+            name: '电视',
+            type: 'TV'},
+          {
+            name: '笔记本',
+            type: 'PC'},
+          {
+             name: '家电',
+            type: 'furniture'},
+          {
+            name: '路由器',
+            type: 'router'},
+          {
+            name: '智能硬件',
+            type: 'intelligent'
+          },
+            ],
+        mobile1: [ 
+          {
+            name: '小米11',
+            price: '1999元起'
+          },
+          {
+            name: '小米10至尊纪念版',
+            price: '5299元起'
+          },
+          {
+            name: '小米10',
+            price: '3799元起'
+          },
+          {
+            name: '小米10青春版',
+            price: '3799元起'
+          },
+          {
+            name: '小米Max',
+            price: '19999元起'
+          }],
+        mobile2: [
+        {
+            name: 'Redmi Note9系列',
+            price: '999元起'
+        },
+        {
+            name: 'Redmi K30s至尊纪念版',
+            price: '2599元起'
+        },
+        {
+            name: 'Redmi K30至尊纪念版',
+            price: '1999元起'
+        },
+        {
+            name: 'Redmi 9A',
+            price: '599元起'
+        },
+        {
+            name: 'Redmi K30系列',
+            price: '1299元起'
+        },
+        {
+            name: 'Redmi X10系列',
+            price: '1299元起'
+        },
+        ],
+        TV: [
+        {
+            name: '小米电视大师 82英寸至尊纪念版',
+            price: '49999元起'
+        },
+        {
+            name: '小米电视大师 82英寸',
+            price: '9999元起'
+        },
+        {
+            name: '小米透明电视',
+            price: '49999元起'
+        },
+        {
+            name: '小米电视大师 65英寸OLED',
+            price: '9999元起'
+        },
+        {
+            name: 'Redmi 智能电视 MAX 98',
+            price: '19999元起'
+        },
+        {
+            name: '小米电视4A 60英寸',
+            price: '2399元起'
+        },
+        ],
+        PC: [
+        {
+            name: 'Redmi G 游戏本',
+            price: ''
+        },
+        {
+            name: 'RedmiBook 16',
+            price: '4499元起'
+        },
+        {
+            name: 'RedmiBook 14 Ⅱ',
+            price: '3199元起'
+        },
+        {
+            name: 'Pro 15.6 2020款',
+            price: '5999元起'
+        },
+        {
+            name: 'Redmibook Air 13',
+            price: '4499元起'
+        },
+        {
+            name: '显示器',
+            price: '2199元起'
+        },
+        ],
+        furniture: [
+        {
+            name: '米家互联网空调C1(一级能效)',
+            price: '2199元'
+        },
+        {
+            name: '米家互联网空调(一级能效)',
+            price: '2199元'
+        },
+        {
+            name: '米家互联网洗烘一体机10kg',
+            price: '1899元'
+        },
+        {
+            name: '米家风冷对开门冰箱 485L',
+            price: '2199元'
+        },
+        {
+            name: '米家两门冰箱 160L',
+            price: '899元'
+        },
+        ],
+        router: [
+        {
+            name: '小米路由器AX6000',
+            price: '599元'
+        },
+        {
+            name: 'Redmi路由器 AX6',
+            price: '299元'
+        },
+        {
+            name: 'Redmi路由器 AX5',
+            price: '199元'
+        },
+        {
+            name: '小米路由器 AX1800',
+            price: '299元'
+        },
+        {
+            name: '小米AloT路由器AX3600',
+            price: '499元'
+        },
+        {
+            name: 'Redmi路由器AC2100',
+            price: '149元'
+        },
+        ],
+        intelligent: [
+        {
+            name: '小米全自动智能门锁',
+            price: '1699元'
+        },
+        {
+            name: 'Redmi小爱触屏音箱Pro8',
+            price: '399元'
+        },
+        {
+            name: '小米小爱触屏音箱',
+            price: '169元'
+        },
+        {
+            name: 'Redmi小爱音箱 Play',
+            price: '79元'
+        },
+        {
+            name: '小米小爱老师',
+            price: '799元'
+        },
+        {
+            name: '查看全部',
+            price: '智能硬件'
+        },
+        ],
+        Lbanner: ['进入和退出平台','店铺管理','商品和服务质量保障','消费者权益保护','个人信息保护','小米商城资质证照','规则动态'],
+        Idata: '小米商城平台主体',
+        activeindex: 0,
+      },
+      methods: {
+        Lbclick(index) {
+          this.activeindex = index;
+          this.Idata = this.Lbanner[index];
+        }
+      }
+    })
+  </script>
+</body>
+</html>

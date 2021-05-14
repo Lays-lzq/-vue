@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/submition.css">
+  <script src="../js/animate.js"></script>
+  <script src="../js/submition.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="head">
+      <div class="container">
+        <div class="header-logo">
+          <a href="index.html">
+            <div class="logo-left"></div>
+            <div class="logo-right"></div>
+          </a>
+        </div>
+      </div>
+      <div class="text">
+        <span class="title">我的购物车</span>
+        <span class="tips">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</span>
+      </div>
+    </div>
+    <div class="main">
+      <div v-if="books.length">
+        <table>
+          <thead>
+            <tr>
+              <th class="img"></th>
+              <th class="name">商品名称</th>
+              <th class="price">单价</th>
+              <th class="num">数量</th>
+              <th class="Psum">小计</th>
+              <th class="act">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item,index) in books">
+              <td class="imgd">
+                <img src="../img/sub.jpg" width="80px" alt="">
+              </td>
+              <td class="named">{{ item.name }}</td>
+              <td class="priced">{{ item.price | showprice }}</td>
+              <td class="numd">
+                <button @click="decrement(index)">-</button>
+                {{ item.count }}
+                <button @click="increment(index)">+</button>
+              </td>
+              <td class="Psumd">{{item.price*item.count | showprice}}</td>
+              <td class="actd"><button @click="remove(index)">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="foot">
+          <a href="" class="ct">继续购物</a>
+          <span>共1件商品</span>
+          <a href="" class="js">去结算</a>
+          <a href="" class="hj">合计:<h2>{{ sum }}</h2></a>
+        </div>
+      </div>
+      <h2 class="kong" v-else>购物车为空</h2>
+    </div>
+   </div>
+  </div>
+  <script src="../js/vue (1).js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        books: [{
+            name: 'RedmiBook 14 Ⅱ i5/16G/512G/MX350',
+            price: 4499.00,
+            count: 1
+          }, {
+            name: '小米10至尊纪念版',
+            price: 5299.00,
+            count: 1
+          },
+          {
+            name: '小米电视大师 82英寸',
+            price: 9999.00,
+            count: 1
+          },
+          {
+            name: 'Redmi路由器 AX6',
+            price: 329.00,
+            count: 1
+          },
+        ]
+      },
+      methods: {
+        increment(index) {
+          this.books[index].count++;
+        },
+        decrement(index) {
+          if (this.books[index].count > 0) {
+            this.books[index].count--;
+          } else {
+            this.books[index].count = 0;
+          }
+        },
+        remove(index) {
+          this.books.splice(index, 1);
+        }
+      },
+      filters: {
+        showprice(price) {
+          return '￥' + price.toFixed(2)
+        }
+      },
+      computed: {
+        sum() {
+          let add = 0;
+          for (let i = 0; i < this.books.length; i++) {
+            add += this.books[i].count * this.books[i].price;
+          }
+          return '￥' + add.toFixed(2)
+        },
+
+      }
+    })
+  </script>
+</body>
+</html>
